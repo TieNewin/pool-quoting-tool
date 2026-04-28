@@ -31,13 +31,13 @@ export default function HomePage() {
     (p) => p.name === packageName
   );
 
-  const models = [
-    ...new Set(
+  const models = Array.from(
+    new Set(
       pools
         .filter((p) => p.brand === brand)
         .map((p) => p.model)
-    ),
-  ];
+    )
+  );
 
   const sizes = pools
     .filter((p) => p.brand === brand && p.model === model)
